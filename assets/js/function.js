@@ -71,9 +71,12 @@ inputForm.addEventListener("submit", function (e) {
 
     messageWrap.classList.add("sent");
     message.textContent = userInput;
-
     messageWrap.appendChild(message);
-    convoWrap.appendChild(messageWrap);
+
+
+    if (userInput) {
+        convoWrap.appendChild(messageWrap);
+    }
 
     inputMessage.value = "";
     inputMessage.focus();
