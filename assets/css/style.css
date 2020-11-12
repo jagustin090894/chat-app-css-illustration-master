@@ -34,10 +34,6 @@ img {
   right: 50%;
   margin-right: 20.83333333333333%;
   z-index: -1;
-  -webkit-animation: move 10s linear infinite;
-          animation: move 10s linear infinite;
-  -webkit-transform: translateY(-30px);
-          transform: translateY(-30px);
 }
 
 .bg-2 {
@@ -50,10 +46,6 @@ img {
   left: 50%;
   margin-left: 27.43%;
   z-index: -1;
-  -webkit-animation: move 8s ease infinite;
-          animation: move 8s ease infinite;
-  -webkit-transform: translateY(30px);
-          transform: translateY(30px);
 }
 
 @-webkit-keyframes move {
