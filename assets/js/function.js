@@ -1,4 +1,4 @@
-/* var tl = gsap.timeline();
+var tl = gsap.timeline();
 
 tl.set(".convo-wrap", {
     overflow: "hidden",
@@ -88,4 +88,3 @@ inputForm.addEventListener("submit", function (e) {
         y: "20",
     });
 });
- */
