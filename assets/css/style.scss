@@ -16,6 +16,7 @@ body {
     font-size: 16px;
     font-family: $ff-rubik;
     background: #fafafa;
+    min-width: 320px;
 }
 
 img {
@@ -37,7 +38,16 @@ img {
     right: 50%;
     margin-right: 20.83333333333333%;
     z-index: -1;
+    animation: move 10s ease infinite;
+    transform: translateY(-30px);
 }
+
+@keyframes move {
+    50% {
+        transform: translateY(0);
+    }
+}
+
 
 .bg-2 {
     background: rgb(250, 245, 251);
@@ -49,6 +59,8 @@ img {
     left: 50%;
     margin-left: 27.43%;
     z-index: -1;
+    animation: move 8s ease infinite;
+    transform: translateY(30px);    
 }
 
 .container {
@@ -65,7 +77,8 @@ img {
 }
 
 .left {
-    width: 40.45138888888889%;
+    width: 50%;
+    padding-right: 9.548611111111111%;
 }
 
 .mobile-wrap {
@@ -76,7 +89,6 @@ img {
     padding: 10px;
     margin-left: auto;
     position: relative;
-    box-shadow: 0rem 7rem 8.4rem rgba(0, 0, 0, 0.144);
 }
 
 .mobile {
@@ -84,18 +96,19 @@ img {
     height: 100%;
     border-radius: 20px;
     overflow: hidden;
-}
 
-.mobile:before {
-    content: "";
-    width: 130px;
-    height: 30px;
-    position: absolute;
-    background: #fff;
-    top: 0;
-    left: 50%;
-    margin-left: -65px;
-    border-radius: 50px;
+    &:before {
+        content: "";
+        width: 130px;
+        height: 30px;
+        position: absolute;
+        background: #fff;
+        top: 0;
+        left: 50%;
+        margin-left: -65px;
+        border-radius: 50px;
+        z-index: 1;
+    }
 }
 
 .user-wrap {
@@ -107,38 +120,38 @@ img {
     align-items: center;
     border-radius: 0 0 5px 5px;
     box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.185);
-}
 
-.user-wrap button {
-    border: 0;
-    background: transparent;
-    color: #fff;
-    outline: none;
-    cursor: pointer;
-}
+    button {
+        border: 0;
+        background: transparent;
+        color: #fff;
+        outline: none;
+        cursor: pointer;
+    }
 
-.avatar {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    border: 1px solid #fff;
-    margin-right: 8px;
+    .avatar {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        margin-right: 8px;
+    }
 }
 
 .user {
     flex-grow: 1;
     line-height: 0.4;
-}
 
-.user .name {
-    font-size: 0.75rem;
-    color: #fff;
-    margin-bottom: 0.4166666666666667em;
-}
+    .name {
+        font-size: 0.75rem;
+        color: #fff;
+        margin-bottom: 0.4166666666666667em;
+    }
 
-.user .status {
-    font-size: 0.5rem;
-    color: $pale-violet;
+    .status {
+        font-size: 0.5rem;
+        color: $pale-violet;
+    }
 }
 
 .convo-wrap {
@@ -163,11 +176,13 @@ img {
         background: #555;
     }
 
-    .received + .sent, .sent + .received   {
+    .received + .sent,
+    .sent + .received {
         margin-top: 14px;
     }
 
-    .received, .sent {
+    .received,
+    .sent {
         display: flex;
         margin-bottom: 8px;
 
@@ -183,50 +198,48 @@ img {
     }
 
     .received {
-        
         p {
             background: #ede5f4;
             color: $moderate-violet;
-            margin-right: auto;            
+            margin-right: auto;
             border-radius: 10px 10px 10px 4px;
         }
     }
 
     .sent {
-
         p {
             background: #ffffff;
             color: $desaturated-dark-violet;
-            margin-left: auto;            
-           border-radius: 10px 10px 4px 10px;
+            margin-left: auto;
+            border-radius: 10px 10px 4px 10px;
         }
-    }    
+    }
 
     .file-group {
         display: flex;
-    
+
         &.received {
             justify-content: flex-start;
-    
+
             img + img {
                 margin-right: 0.5rem;
             }
         }
-    
+
         &.sent {
             justify-content: flex-end;
-    
+
             img + img {
                 margin-left: 0.5rem;
             }
         }
-    
+
         img {
             width: 2.5rem;
             border-radius: 10px;
         }
     }
-    
+
     .radio {
         width: 10rem;
         display: inline-block;
@@ -237,7 +250,7 @@ img {
             $light-violet 100%
         );
         border-radius: 10px 10px 10px 4px;
-        
+
         label {
             display: flex;
             align-items: center;
@@ -245,20 +258,19 @@ img {
             color: #ffa9ff;
             position: relative;
             padding-left: 4px;
-    
+
             input {
                 margin-right: 0.5rem;
                 -webkit-appearance: none;
                 padding-left: 5px;
 
                 &:checked ~ .icon-circle-thin:before {
-                    content: '\f111';
+                    content: "\f111";
                     font-family: "fontello";
                 }
             }
-
         }
-    
+
         strong {
             margin-left: auto;
             font-size: 0.75rem;
@@ -272,7 +284,7 @@ img {
             font-size: 13px;
             color: #ec63ff;
         }
-    }    
+    }
 }
 
 .keypad-wrap {
@@ -289,10 +301,11 @@ img {
         border-radius: 50px;
         padding: 0 45px 0 20px;
         outline: 0;
+        font-size: 0.53125rem;
 
         &::placeholder {
             color: $grayish-blue;
-            opacity: 1; 
+            opacity: 1;
         }
 
         &:-ms-input-placeholder {
@@ -301,7 +314,7 @@ img {
 
         &::-ms-input-placeholder {
             color: $grayish-blue;
-        }        
+        }
     }
 
     .btn-submit {
@@ -318,19 +331,57 @@ img {
 }
 
 .right {
-    width: 48.65%;
-    padding-top: 160px;
-    padding-right: 117px;
+    width: 50%;
+    padding: 160px 9% 160px 1.388888888888889%;
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: 500;
+        color: $very-dark-desaturated-violet;
+        margin-bottom: 0.575em;
+    }
+
+    p {
+        color: $dark-grayish-violet;
+        line-height: 1.7;
+    }
 }
 
-.right h1 {
-    font-size: 2.5rem;
-    font-weight: 500;
-    color: $very-dark-desaturated-violet;
-    margin-bottom: 0.575em;
-}
+@media (max-width: 768px) {
+    .bg-1 {
+        top: -190px;
+        margin-right: 0;
+    }
 
-.right p {
-    color: $dark-grayish-violet;
-    line-height: 1.7;
+    .bg-2 {
+        margin-left: 0;
+        bottom: -170px;
+    }
+
+    .container {
+        padding-top: 63px;
+    }
+
+    .row {
+        flex-direction: column;
+        justify-content: flex-start;
+
+        > .left,
+        .right {
+            width: 100%;
+        }
+
+        > .left {
+            padding: 0;
+        }
+
+        > .right {
+            padding: 63px 0;
+            text-align: center;
+        }
+    }
+
+    .mobile-wrap {
+        margin: 0 auto;
+    }
 }
