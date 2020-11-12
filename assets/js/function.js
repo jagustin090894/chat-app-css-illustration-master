@@ -60,22 +60,22 @@ tl.set(".convo-wrap", {
 const inputForm = document.forms["form-input"];
 const inputMessage = document.getElementById("input-message");
 const btnSubmit = document.querySelector(".btn-submit");
-const convoWrap = document.querySelector('.convo-wrap');
+const convoWrap = document.querySelector(".convo-wrap");
 
-inputForm.addEventListener('submit', function(e) {
+inputForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
     let userInput = inputMessage.value;
-    let messageWrap = document.createElement('div');
-    let message = document.createElement('p');
+    let messageWrap = document.createElement("div");
+    let message = document.createElement("p");
 
-    messageWrap.classList.add('sent');
+    messageWrap.classList.add("sent");
     message.textContent = userInput;
 
     messageWrap.appendChild(message);
     convoWrap.appendChild(messageWrap);
 
-    inputMessage.value = '';
+    inputMessage.value = "";
     inputMessage.focus();
 
     convoWrap.scrollTop = convoWrap.scrollHeight;
@@ -85,6 +85,6 @@ inputForm.addEventListener('submit', function(e) {
         stagger: 0.1,
         duration: 0.8,
         ease: "back",
-        y: "20",        
-    })
+        y: "20",
+    });
 });

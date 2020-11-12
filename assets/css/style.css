@@ -34,24 +34,10 @@ img {
   right: 50%;
   margin-right: 20.83333333333333%;
   z-index: -1;
-  -webkit-animation: move 10s ease infinite;
-          animation: move 10s ease infinite;
+  -webkit-animation: move 10s linear infinite;
+          animation: move 10s linear infinite;
   -webkit-transform: translateY(-30px);
           transform: translateY(-30px);
-}
-
-@-webkit-keyframes move {
-  50% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes move {
-  50% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
 }
 
 .bg-2 {
@@ -68,6 +54,20 @@ img {
           animation: move 8s ease infinite;
   -webkit-transform: translateY(30px);
           transform: translateY(30px);
+}
+
+@-webkit-keyframes move {
+  50% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes move {
+  50% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 
 .container {
@@ -99,7 +99,8 @@ img {
   border-radius: 30px;
   padding: 10px;
   margin-left: auto;
-  position: relative;
+  -webkit-box-shadow: 0 27px 45px -5px #0000001f;
+          box-shadow: 0 27px 45px -5px #0000001f;
 }
 
 .mobile {
@@ -221,6 +222,11 @@ img {
   display: inline-block;
   padding: 8px;
   max-width: 130px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
 }
 
 .convo-wrap .received p {

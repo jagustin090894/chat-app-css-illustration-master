@@ -38,16 +38,9 @@ img {
     right: 50%;
     margin-right: 20.83333333333333%;
     z-index: -1;
-    animation: move 10s ease infinite;
+    animation: move 10s linear infinite;
     transform: translateY(-30px);
 }
-
-@keyframes move {
-    50% {
-        transform: translateY(0);
-    }
-}
-
 
 .bg-2 {
     background: rgb(250, 245, 251);
@@ -60,7 +53,13 @@ img {
     margin-left: 27.43%;
     z-index: -1;
     animation: move 8s ease infinite;
-    transform: translateY(30px);    
+    transform: translateY(30px);
+}
+
+@keyframes move {
+    50% {
+        transform: translateY(0);
+    }
 }
 
 .container {
@@ -88,7 +87,7 @@ img {
     border-radius: 30px;
     padding: 10px;
     margin-left: auto;
-    position: relative;
+    box-shadow: 0 27px 45px -5px #0000001f;
 }
 
 .mobile {
@@ -194,6 +193,9 @@ img {
             display: inline-block;
             padding: 8px;
             max-width: 130px;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto            
         }
     }
 
